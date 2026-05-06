@@ -18,7 +18,8 @@ Live Demo: [Play Algorithm Maze Visualizer](https://theexplorationof007.github.i
 
 ## Screenshots
 
-> 截图占位：部署或运行项目后，可在这里添加页面截图。
+<img width="2013" height="1206" alt="image" src="https://github.com/user-attachments/assets/ae4658b6-8be7-4428-8350-7811370b774b" />
+
 
 ```text
 docs/screenshot-home.png
