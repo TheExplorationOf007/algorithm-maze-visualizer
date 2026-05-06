@@ -2,10 +2,17 @@
 
 一个纯前端的迷宫游戏与路径搜索可视化项目。打开 `index.html` 就可以运行，适合部署到 GitHub Pages，也适合学生阅读和修改。
 
+Live Demo:
+
+```text
+https://theexplorationof007.github.io/algorithm-maze-visualizer/
+```
+
 ## Features
 
 - 随机生成网格迷宫
 - 起点、终点和玩家当前位置高亮显示
+- 霓虹风格迷宫地图和迷宫勇者角色
 - 支持方向键或 WASD 手动移动
 - 支持 BFS、DFS、A* 三种路径搜索算法
 - 动画展示访问节点、边界节点和最终路径
@@ -28,6 +35,15 @@ docs/screenshot-algorithm-running.png
 
 1. 下载或克隆项目。
 2. 在浏览器中打开 `index.html`。
+
+玩法：
+
+- 青色格子是起点。
+- 红色格子是终点。
+- 小角色是玩家。
+- 深色能量墙不能通过。
+- 使用方向键或 WASD 移动。
+- 点击 BFS、DFS、A* 可以观察不同算法如何搜索路径。
 
 方式二：GitHub Pages 部署
 
