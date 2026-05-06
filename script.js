@@ -20,6 +20,7 @@ const statusText = document.getElementById("statusText");
 let grid = [];
 let cells = [];
 let player = { row: 1, col: 1 };
+let playerFacing = "down";
 const start = { row: 1, col: 1 };
 const end = { row: ROWS - 2, col: COLS - 2 };
 let isAnimating = false;
@@ -103,7 +104,9 @@ function paintGrid() {
       if (grid[row][col] === WALL) cell.classList.add("wall");
       if (row === start.row && col === start.col) cell.classList.add("start");
       if (row === end.row && col === end.col) cell.classList.add("end");
-      if (row === player.row && col === player.col) cell.classList.add("player");
+      if (row === player.row && col === player.col) {
+        cell.classList.add("player", `player-${playerFacing}`);
+      }
     }
   }
 }
@@ -123,6 +126,7 @@ function generateMaze() {
   grid[start.row][start.col] = EMPTY;
   grid[end.row][end.col] = EMPTY;
   player = { ...start };
+  playerFacing = "down";
   renderGrid();
   resetStats();
   statusText.textContent = "迷宫已生成。你可以手动移动，也可以运行算法。";
@@ -339,6 +343,10 @@ function movePlayer(rowDelta, colDelta) {
   }
 
   player = next;
+  if (rowDelta < 0) playerFacing = "up";
+  if (rowDelta > 0) playerFacing = "down";
+  if (colDelta < 0) playerFacing = "left";
+  if (colDelta > 0) playerFacing = "right";
   paintGrid();
 
   if (player.row === end.row && player.col === end.col) {
