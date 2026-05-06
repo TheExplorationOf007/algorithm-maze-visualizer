@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algorithm Maze Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="topbar" aria-label="应用标题">
+      <div>
+        <p class="eyebrow">Maze Game + Pathfinding</p>
+        <h1>Algorithm Maze Visualizer</h1>
+      </div>
+      <div class="legend" aria-label="图例">
+        <span><i class="legend-swatch wall"></i>墙</span>
+        <span><i class="legend-swatch start"></i>起点</span>
+        <span><i class="legend-swatch end"></i>终点</span>
+        <span><i class="legend-swatch visited"></i>访问</span>
+        <span><i class="legend-swatch frontier"></i>边界</span>
+        <span><i class="legend-swatch path"></i>路径</span>
+        <span><i class="legend-swatch player"></i>玩家</span>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <aside class="panel controls-panel" aria-label="控制面板">
+        <div class="control-grid">
+          <button id="generateBtn" type="button">生成迷宫</button>
+          <button id="clearBtn" type="button">清除路径</button>
+          <button id="bfsBtn" type="button">运行 BFS</button>
+          <button id="dfsBtn" type="button">运行 DFS</button>
+          <button id="astarBtn" type="button">运行 A*</button>
+        </div>
+
+        <label class="speed-control" for="speedRange">
+          <span>动画速度</span>
+          <input id="speedRange" type="range" min="10" max="180" value="55">
+          <strong id="speedLabel">55 ms</strong>
+        </label>
+
+        <div class="hint">
+          <strong>移动</strong>
+          <span>使用方向键或 WASD 控制玩家，从起点走到终点。</span>
+        </div>
+      </aside>
+
+      <section class="maze-wrap" aria-label="迷宫区域">
+        <div id="maze" class="maze-grid" role="grid" aria-label="可视化迷宫"></div>
+      </section>
+
+      <aside class="panel stats-panel" aria-label="统计信息">
+        <h2>运行统计</h2>
+        <dl class="stats">
+          <div>
+            <dt>算法</dt>
+            <dd id="statAlgorithm">-</dd>
+          </div>
+          <div>
+            <dt>访问节点</dt>
+            <dd id="statVisited">0</dd>
+          </div>
+          <div>
+            <dt>路径长度</dt>
+            <dd id="statPath">0</dd>
+          </div>
+          <div>
+            <dt>运行时间</dt>
+            <dd id="statTime">0 ms</dd>
+          </div>
+        </dl>
+        <p id="statusText" class="status-text">点击“生成迷宫”开始，或直接运行算法查看默认迷宫。</p>
+      </aside>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
