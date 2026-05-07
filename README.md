@@ -97,14 +97,6 @@ algorithm-maze-visualizer/
 - 搜索过程动画
 - GitHub Pages 静态站点部署
 
-## 未来可以改进
-
-- 支持鼠标绘制墙体
-- 支持拖拽设置起点和终点
-- 增加 Dijkstra 和 Greedy Best-First Search
-- 增加地图尺寸选择
-- 增加移动步数统计和计时挑战模式
-- 添加移动端触控按钮
 
 ## License
 
